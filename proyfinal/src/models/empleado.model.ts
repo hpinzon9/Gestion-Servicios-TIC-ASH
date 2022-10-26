@@ -23,7 +23,7 @@ export class Empleado extends Entity {
   apellidos: string;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
   })
   fecha_nacimiento: string;

@@ -13,3 +13,4 @@ export * from './empresa.controller';
 export * from './empleado.controller';
 export * from './directivo.controller';
 export * from './servicio.controller';
+export * from './cliente.controller';
