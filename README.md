@@ -1,1 +1,0 @@
-# Gestion-Servicios-TIC-ASH
