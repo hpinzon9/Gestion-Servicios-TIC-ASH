@@ -1,3 +1,4 @@
+import {service} from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -19,11 +20,14 @@ import {
 } from '@loopback/rest';
 import {Empleado} from '../models';
 import {EmpleadoRepository} from '../repositories';
+import {AutenticacionService} from '../services';
 
 export class EmpleadoController {
   constructor(
     @repository(EmpleadoRepository)
     public empleadoRepository : EmpleadoRepository,
+    @service(AutenticacionService)
+    public autenticacionService: AutenticacionService,
   ) {}
 
   @post('/empleados')
@@ -37,13 +41,17 @@ export class EmpleadoController {
         'application/json': {
           schema: getModelSchemaRef(Empleado, {
             title: 'NewEmpleado',
-            
+
           }),
         },
       },
     })
     empleado: Empleado,
   ): Promise<Empleado> {
+    var passwordGenerate = this.autenticacionService.generarClaveAleatoria();
+    console.log("La clave generada es: " + passwordGenerate);
+    const claveCifrada = this.autenticacionService.cifrarClave(passwordGenerate);
+    console.log("La clave cifrada es: " + claveCifrada);
     return this.empleadoRepository.create(empleado);
   }
 

@@ -150,14 +150,14 @@ export class NotificacionesController {
   }
   enviarSMS(mensaje:any){
 const accountSid = 'ACe6469452f1a5ba777a30b39b29f5fc84';
-const authToken = '3c3179c697cdb251904f4df11a5e61e5';
+const authToken = 'beb7feb6d5bf09bbe6a9eadbb69fda01';
 const client = require('twilio')(accountSid, authToken);
 
 client.messages
   .create({
      body: mensaje,
      from: '+18039916184',
-     to: '+5731535709992'
+     to: '+573153570992'
    })
   .then((message: any) => console.log(message.sid));
   }
