@@ -18,6 +18,7 @@ import {
   requestBody,
   response,
 } from '@loopback/rest';
+import {Personalization} from '@sendgrid/helpers/classes';
 import {Empleado} from '../models';
 import {EmpleadoRepository} from '../repositories';
 import {AutenticacionService} from '../services';
@@ -48,10 +49,10 @@ export class EmpleadoController {
     })
     empleado: Empleado,
   ): Promise<Empleado> {
-    var passwordGenerate = this.autenticacionService.generarClaveAleatoria();
-    console.log("La clave generada es: " + passwordGenerate);
-    const claveCifrada = this.autenticacionService.cifrarClave(passwordGenerate);
-    console.log("La clave cifrada es: " + claveCifrada);
+    //var passwordGenerate = this.autenticacionService.generarClaveAleatoria();
+    //console.log("La clave generada es: " + passwordGenerate);
+    const claveCifrada = this.autenticacionService.cifrarClave(empleado.clave);
+    empleado.clave = claveCifrada;
     return this.empleadoRepository.create(empleado);
   }
 
