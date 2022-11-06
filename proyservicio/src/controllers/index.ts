@@ -13,3 +13,4 @@ export * from './empleado.controller';
 export * from './cliente.controller';
 export * from './servicio.controller';
 export * from './notificaciones.controller';
+export * from './persona.controller';
