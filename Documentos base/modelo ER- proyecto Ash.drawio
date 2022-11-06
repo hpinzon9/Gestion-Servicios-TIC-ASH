@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-27T11:18:38.893Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="jz7JR_5x7bpYyEs6VF6L" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-06T02:11:05.111Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="1yu_TqZ5_8w-Jf-8uA3i" version="20.5.2" type="github">
   <diagram id="1xkqf91_nlWIGy7i5uqU" name="Página-1">
     <mxGraphModel dx="781" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -126,6 +126,24 @@
             <mxPoint x="350" y="370" as="sourcePoint" />
             <mxPoint x="450" y="270" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-1" value="Persona" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="254" y="390" width="160" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-2" value="id: String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="glK-zGITrVP_J2qyvmUR-1">
+          <mxGeometry y="26" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-3" value="nombres: String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="glK-zGITrVP_J2qyvmUR-1">
+          <mxGeometry y="56" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-4" value="apellidos String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="glK-zGITrVP_J2qyvmUR-1">
+          <mxGeometry y="86" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-5" value="correo: String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="glK-zGITrVP_J2qyvmUR-1">
+          <mxGeometry y="116" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="glK-zGITrVP_J2qyvmUR-6" value="clave: String" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="glK-zGITrVP_J2qyvmUR-1">
+          <mxGeometry y="146" width="160" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
