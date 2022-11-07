@@ -20,7 +20,8 @@ export class AutenticacionService {
   };
 
   cifrarClave = (clave: string): string => {
-    return CryptoJS.MD5(clave).toString();
+    let claveCifrada = CryptoJS.MD5(clave).toString();
+    return claveCifrada;
   }
 
   IdentificarPersona(usuario: string, clave: string){

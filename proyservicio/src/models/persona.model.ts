@@ -31,6 +31,12 @@ export class Persona extends Entity {
     type: 'string',
     required: true,
   })
+  celular: string;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
   clave: string;
 
 

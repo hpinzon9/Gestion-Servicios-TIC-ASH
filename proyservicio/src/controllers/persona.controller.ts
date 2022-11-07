@@ -19,9 +19,11 @@ import {
   response,
   HttpErrors,
 } from '@loopback/rest';
+import {Llaves} from '../config/llaves';
 import {Credenciales, Persona} from '../models';
 import {PersonaRepository} from '../repositories';
 import { AutenticacionService } from '../services';
+var fetch = require('node-fetch');
 
 export class PersonaController {
   constructor(
@@ -77,9 +79,22 @@ if(p){
   ): Promise<Persona> {
     //var passwordGenerate = this.autenticacionService.generarClaveAleatoria();
     //console.log("La clave generada es: " + passwordGenerate);
-    const claveCifrada = this.autenticacionService.cifrarClave(persona.clave);
+    let clave = this.autenticacionService.generarClaveAleatoria();
+    let claveCifrada = this.autenticacionService.cifrarClave(clave);
     persona.clave = claveCifrada;
-    return this.personaRepository.create(persona);
+
+   let p = await this.personaRepository.create(persona);
+
+   //Notificar al usuario, se deben enviar 3 parametros
+   let destino = persona.correo;
+   let asunto = 'Registro en la plataforma';
+   let contenido = `Hola ${persona.nombres}, su nombre de usuario ${persona.correo} y su contraseña es ${clave}`
+   //fetch(`http://127.0.0.1:5000/envio-correo?correo-destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+   fetch(`${Llaves.urlServicioNotificaciones}/envio-correo?correo-destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+   .then((data:any) =>{
+    console.log(data);
+   })
+   return p;
   }
 
   @get('/personas/count')
