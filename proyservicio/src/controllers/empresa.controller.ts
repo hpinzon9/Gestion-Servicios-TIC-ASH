@@ -21,7 +21,7 @@ import {
 import {Empresa} from '../models';
 import {EmpresaRepository} from '../repositories';
 
-@authenticate("admin")
+//@authenticate("admin")
 export class EmpresaController {
   constructor(
     @repository(EmpresaRepository)
@@ -48,7 +48,7 @@ export class EmpresaController {
   ): Promise<Empresa> {
     return this.empresaRepository.create(empresa);
   }
-  @authenticate.skip()
+  //@authenticate.skip()
   @get('/empresas/count')
   @response(200, {
     description: 'Empresa model count',
